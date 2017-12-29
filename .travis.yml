@@ -1,2 +1,2 @@
 language: node_js
-node_js: -"0.33.2"
+node_js: -"6"
