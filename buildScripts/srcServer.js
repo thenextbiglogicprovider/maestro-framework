@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../src/views/index.html'));
 });
 
+/*eslint-disable no-console*/
 app.listen(port, (err) => {
   if (err) {
     console.log('Error:' + err);
