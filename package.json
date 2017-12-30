@@ -13,7 +13,8 @@
     "tunnel": "lt --port 1234 --subdomain maestro7007",
     "share": "npm-run-all --parallel open:src tunnel",
     "lint": "esw webpack.config.* src buildScripts --color",
-    "lint:watch":"npm run lint -- --watch"
+    "lint:watch":"npm run lint -- --watch",
+    "build":"npm-run-all --parallel security-check lint"
   },
   "repository": {
     "type": "git",
