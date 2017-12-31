@@ -7,14 +7,17 @@
     "test": "mocha --reporter landing buildScripts/testSetup.js \"src/**/*.test.js\"",
     "test:watch":"npm run test -- --watch",
     "prestart": "babel-node buildScripts/srcMessage.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mock-api",
     "open:src": "babel-node buildScripts/srcServer.js",
     "security-check": "nsp check",
     "tunnel": "lt --port 1234 --subdomain maestro7007",
     "share": "npm-run-all --parallel open:src tunnel",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch":"npm run lint -- --watch",
-    "build":"npm-run-all --parallel security-check lint"
+    "build":"npm-run-all --parallel security-check lint",
+    "gn-mock-data":"babel-node buildScripts/mock/generateMockData",
+    "prestart-mock-api":"npm run gn-mock-data",
+    "start-mock-api":"json-server --watch src/api/mockDb.json --port 3001"
   },
   "repository": {
     "type": "git",
