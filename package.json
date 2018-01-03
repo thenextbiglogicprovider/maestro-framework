@@ -20,7 +20,8 @@
     "postbuild":"babel-node buildScripts/distServer.js",
     "gn-mock-data":"babel-node buildScripts/mock/generateMockData",
     "prestart-mock-api":"npm run gn-mock-data",
-    "start-mock-api":"json-server --watch src/api/mockDb.json --port 3001"
+    "start-mock-api":"json-server --watch src/api/mockDb.json --port 3001",
+    "deploy":"surge ./dist"
   },
   "repository": {
     "type": "git",

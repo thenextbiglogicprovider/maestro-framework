@@ -1,5 +1,5 @@
 export default function getBaseUrl() {
-  return getQueryStringParamByName('useMockApi')?'http://localhost:3001/':'/';
+  return getQueryStringParamByName('useMockApi')?'http://localhost:3001/':'https://maestro-node-frame.herokuapp.com/';
 }
 
 function getQueryStringParamByName(name, url)
